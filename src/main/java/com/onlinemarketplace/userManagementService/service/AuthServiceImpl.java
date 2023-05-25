@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 @Service
 public class AuthServiceImpl implements AuthService{
@@ -59,6 +60,9 @@ public class AuthServiceImpl implements AuthService{
 
         User user = new User() ;
 
+        String temp = "user"+ UUID.randomUUID() ;
+
+        user.setId(temp);
         user.setName(registerRequestData.getName());
         user.setUsername(registerRequestData.getUsername());
         user.setEmail(registerRequestData.getEmail());
@@ -73,7 +77,7 @@ public class AuthServiceImpl implements AuthService{
 
         userRepository.save(user);
 
-        return "user registered successfully!";
+        return "YOU HAVE REGISTERED SUCCESSFULLY! PLEASE LOG IN AGAIN  WITH YOUR CREDENTIALS.";
     }
 
 

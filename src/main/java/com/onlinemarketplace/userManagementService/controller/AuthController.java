@@ -1,6 +1,7 @@
 package com.onlinemarketplace.userManagementService.controller;
 
 import com.onlinemarketplace.userManagementService.requestData.LoginRequestData;
+import com.onlinemarketplace.userManagementService.requestData.RegisterRequestData;
 import com.onlinemarketplace.userManagementService.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,5 +26,11 @@ public class AuthController {
     @PostMapping(value = {"/login","/signin"})
     public ResponseEntity<String> login(@RequestBody LoginRequestData loginRequestData) {
         return new ResponseEntity<>(authService.login(loginRequestData), HttpStatus.OK);
+    }
+
+    // build rest api for registration
+    @PostMapping( value={"/register", "/signup"})
+    public ResponseEntity<String> register(@RequestBody RegisterRequestData registerRequestData) {
+        return new ResponseEntity<>(authService.register(registerRequestData),HttpStatus.CREATED) ;
     }
 }
