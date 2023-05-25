@@ -74,4 +74,5 @@ public class SecurityConfiguration  {
 //
 //        return new InMemoryUserDetailsManager(tohidur, admin);
 //    }
+
 }

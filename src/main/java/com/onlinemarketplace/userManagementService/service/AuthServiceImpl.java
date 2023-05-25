@@ -38,7 +38,7 @@ public class AuthServiceImpl implements AuthService{
     public String login(LoginRequestData loginRequestData) {
 
         Authentication authenticate = authenticationManager.
-                authenticate(new UsernamePasswordAuthenticationToken(loginRequestData.getUsernameOrPassword(), loginRequestData.getPassword()));
+                authenticate(new UsernamePasswordAuthenticationToken(loginRequestData.getUsernameOrEmail(), loginRequestData.getPassword()));
 
         SecurityContextHolder.getContext().setAuthentication(authenticate);
 
