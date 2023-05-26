@@ -19,4 +19,11 @@ public class UserServiceExceptionHandler {
         UserErrorResponse userErrorResponse = new UserErrorResponse(new Date(), exception.getMessage(), webRequest.getDescription(false));
         return new ResponseEntity<>(userErrorResponse, HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(UserAlreadyExistException.class)
+    public ResponseEntity<UserErrorResponse> handleUserAlreadyExistException(UserAlreadyExistException exception , WebRequest webRequest) {
+
+        UserErrorResponse userErrorResponse = new UserErrorResponse(new Date(), exception.getMessage(), webRequest.getDescription(false));
+        return new ResponseEntity<>(userErrorResponse, HttpStatus.NOT_FOUND);
+    }
 }

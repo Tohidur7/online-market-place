@@ -2,6 +2,7 @@ package com.onlinemarketplace.userManagementService.service;
 
 import com.onlinemarketplace.userManagementService.entity.Role;
 import com.onlinemarketplace.userManagementService.entity.User;
+import com.onlinemarketplace.userManagementService.exception.UserAlreadyExistException;
 import com.onlinemarketplace.userManagementService.repository.RoleRepository;
 import com.onlinemarketplace.userManagementService.repository.UserRepository;
 import com.onlinemarketplace.userManagementService.requestData.LoginRequestData;
@@ -50,12 +51,12 @@ public class AuthServiceImpl implements AuthService{
 
         // add check whether username is exists in database or not
         if (userRepository.existsByUsername(registerRequestData.getUsername())) {
-            // todo throw exception for user already exists with the given username
+            throw new UserAlreadyExistException("User already exist with the given username. please choose another username.");
         }
 
         // add check for email exists in the database
-        if (userRepository.existsByEmail(registerRequestData.getUsername())) {
-            // todo throw exception for user already exists with the given email
+        if (userRepository.existsByEmail(registerRequestData.getEmail())) {
+            throw new UserAlreadyExistException("User already exist with the given email. please provide another email.");
         }
 
         User user = new User() ;
