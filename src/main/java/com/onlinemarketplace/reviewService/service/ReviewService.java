@@ -1,13 +1,18 @@
 package com.onlinemarketplace.reviewService.service;
 
 import com.onlinemarketplace.reviewService.requestData.ReviewRequestObject;
+import com.onlinemarketplace.reviewService.responseData.CreateReviewResponseData;
+import com.onlinemarketplace.reviewService.responseData.GetReviewResponseData;
 import com.onlinemarketplace.reviewService.responseData.ReviewResponseObject;
+import com.onlinemarketplace.reviewService.responseData.UpdateReviewResponseData;
 
 public interface ReviewService {
 
-    ReviewResponseObject createReview(String productId,ReviewRequestObject reviewRequestObject);
+    CreateReviewResponseData createReview(String productId, ReviewRequestObject reviewRequestObject);
 
-    ReviewResponseObject updateReview(String productId,ReviewRequestObject reviewRequestObject, String reviewId);
+    UpdateReviewResponseData updateReview(String productId, ReviewRequestObject reviewRequestObject, String reviewId);
 
     String deleteReview(String productId,String reviewId);
+
+    GetReviewResponseData getReviews(String productId);
 }

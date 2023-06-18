@@ -1,8 +1,8 @@
-package com.onlinemarketplace.userManagementService.exception;
-
-public class UserAlreadyExistException extends RuntimeException{
-
-    public UserAlreadyExistException(String message) {
-        super(message);
-    }
-}
+//package com.onlinemarketplace.userManagementService.exception;
+//
+//public class UserAlreadyExistException extends RuntimeException{
+//
+//    public UserAlreadyExistException(String message) {
+//        super(message);
+//    }
+//}

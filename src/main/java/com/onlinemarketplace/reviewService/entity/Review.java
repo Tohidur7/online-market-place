@@ -27,6 +27,8 @@ public class Review {
     @ManyToOne
     private Product product ;
 
+
+
     public String getReviewId() {
         return reviewId;
     }

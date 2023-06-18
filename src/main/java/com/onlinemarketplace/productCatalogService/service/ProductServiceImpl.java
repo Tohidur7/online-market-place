@@ -3,7 +3,7 @@ package com.onlinemarketplace.productCatalogService.service;
 import com.onlinemarketplace.productCatalogService.constant.ProductConstants;
 import com.onlinemarketplace.productCatalogService.entity.Product;
 import com.onlinemarketplace.productCatalogService.exception.ProductDetailsNotFound;
-import com.onlinemarketplace.productCatalogService.repository.ProductCatalogRepository;
+import com.onlinemarketplace.productCatalogService.repository.ProductRepository;
 import com.onlinemarketplace.productCatalogService.requestData.ProductRequestData;
 import com.onlinemarketplace.productCatalogService.responseData.AllProductResponseData;
 import com.onlinemarketplace.productCatalogService.responseData.ProductResponseData;
@@ -18,12 +18,12 @@ import java.util.stream.Collectors;
 
 @Service
 @Slf4j
-public class ProductCatalogServiceImpl implements ProductCatalogService {
+public class ProductServiceImpl implements ProductService {
 
-    private ProductCatalogRepository productCatalogRepository ;
+    private ProductRepository productCatalogRepository ;
 
     @Autowired
-    public ProductCatalogServiceImpl(ProductCatalogRepository productCatalogRepository) {
+    public ProductServiceImpl(ProductRepository productCatalogRepository) {
         this.productCatalogRepository = productCatalogRepository;
     }
 
@@ -65,7 +65,7 @@ public class ProductCatalogServiceImpl implements ProductCatalogService {
 
         String temp="" ;
 
-        temp = "product"+ UUID.randomUUID();
+        temp = "product: "+ UUID.randomUUID();
         product.setId(temp);
         productResponseData.setId(temp);
 

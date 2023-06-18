@@ -1,7 +1,6 @@
 package com.onlinemarketplace.reviewService.responseData;
 
 
-import com.onlinemarketplace.productCatalogService.entity.Product;
 
 public class ReviewResponseObject {
 
@@ -15,8 +14,6 @@ public class ReviewResponseObject {
 
     private String comment ;
 
-
-    private Product product ;
 
     public String getReviewId() {
         return reviewId;
@@ -58,11 +55,4 @@ public class ReviewResponseObject {
         this.comment = comment;
     }
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
 }

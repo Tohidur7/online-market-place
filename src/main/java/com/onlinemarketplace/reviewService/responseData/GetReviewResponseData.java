@@ -1,36 +1,25 @@
-package com.onlinemarketplace.productCatalogService.entity;
-
-import com.onlinemarketplace.reviewService.entity.Review;
-import jakarta.persistence.*;
+package com.onlinemarketplace.reviewService.responseData;
 
 import java.util.List;
 
-@Entity
-public class Product {
+public class GetReviewResponseData {
 
-    @Id
-    private String id;
+    private String id ;
 
-    @Column(nullable = false)
     private String name ;
 
-    @Column(nullable = false)
     private String description ;
 
-    @Column(nullable = false)
     private Double price ;
 
-    @Column(nullable = false)
     private String category ;
 
-    @Column(nullable = false)
     private String image ;
 
-    @Column(nullable = false)
     private Integer stockQuantity ;
 
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
-    private List<Review> reviews ;
+    private List<ReviewResponseObject> reviewResponseObjects ;
+
 
 
 
@@ -90,24 +79,11 @@ public class Product {
         this.stockQuantity = stockQuantity;
     }
 
-    public List<Review> getReviews() {
-        return reviews;
+    public List<ReviewResponseObject> getReviewResponseObjects() {
+        return reviewResponseObjects;
     }
 
-    public void setReviews(List<Review> reviews) {
-        this.reviews = reviews;
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", price=" + price +
-                ", category='" + category + '\'' +
-                ", image='" + image + '\'' +
-                ", stockQuantity=" + stockQuantity +
-                '}';
+    public void setReviewResponseObjects(List<ReviewResponseObject> reviewResponseObjects) {
+        this.reviewResponseObjects = reviewResponseObjects;
     }
 }

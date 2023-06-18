@@ -4,7 +4,7 @@ import com.onlinemarketplace.productCatalogService.requestData.ProductRequestDat
 import com.onlinemarketplace.productCatalogService.responseData.AllProductResponseData;
 import com.onlinemarketplace.productCatalogService.responseData.ProductResponseData;
 
-public interface ProductCatalogService {
+public interface ProductService {
 
     AllProductResponseData getAllListedProducts();
 
